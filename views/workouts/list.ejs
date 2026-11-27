@@ -1,0 +1,50 @@
+<%- include('../partials/header') %>
+<%- include('../partials/main_nav') %>
+
+<main class="container py-5">
+    <h1><%= title %></h1>
+    <p>Your recorded exercises, sets, reps, and weight.</p>
+    <a href="/workouts/add" class="btn btn-primary mb-3">
+        Add Workout
+    </a>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Exercise</th>
+                    <th>Date</th>
+                    <th>Sets</th>
+                    <th>Reps</th>
+                    <th>Weight (lbs)</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% if (Workoutlist.length === 0) { %>
+                    <tr>
+                        <td colspan="5" class="text-center">
+                            No workouts recorded yet.
+                        </td>
+                    </tr>
+                <% } %>
+
+                <% for (let count = 0; count < Workoutlist.length; count++) { %>
+                    <tr>
+                        <td><%= Workoutlist[count].exerciseName %></td>
+                        <td><%= Workoutlist[count].date %></td>
+                        <td><%= Workoutlist[count].sets %></td>
+                        <td><%= Workoutlist[count].reps %></td>
+                        <td><%= Workoutlist[count].weight %></td>
+                        <td>
+                            <a href="/workouts/edit/<%= Workoutlist[count]._id %>"
+                                class="btn btn-warning btn-sm">Edit</a>
+                        </td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</main>
+
+<%- include('../partials/footer') %>

@@ -3,6 +3,7 @@ require('dotenv').config();
 let express = require('express');
 let path = require('path');
 let indexRouter = require('../routes/index');
+let workoutsRouter = require('../routes/workout');
 let app = express();
 let mongoose = require('mongoose');
 let DB = require('./db');
@@ -25,5 +26,5 @@ app.use('/bootstrap', express.static(
 ));
 
 app.use('/', indexRouter);
-
+app.use('/workouts', workoutsRouter);
 module.exports = app;
