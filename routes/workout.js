@@ -92,4 +92,20 @@ router.post('/delete/:id', async function(req, res, next) {
         next(err);
     }
 });
+router.post('/delete/:id', async function(req, res, next) {
+    try {
+        let result = await Workout.deleteOne({
+            _id: req.params.id
+        });
+
+        if (result.deletedCount === 0) {
+            return res.status(404).send('Workout not found');
+        }
+
+        res.redirect('/workouts');
+    }
+    catch (err) {
+        next(err);
+    }
+});
 module.exports = router;
