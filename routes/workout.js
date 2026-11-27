@@ -37,10 +37,12 @@ router.post('/add', async function(req, res, next) {
         next(err);
     }
 });
-// Find the selected workout and display the Edit form.
 router.get('/edit/:id', async function(req, res, next) {
     try {
-        let workout = await Workout.findById(req.params.id);
+        let Workoutlist = await Workout.find({
+            _id: req.params.id
+    });
+let workout = Workoutlist[0];
 
         if (!workout) {
             return res.status(404).send('Workout not found');
@@ -70,6 +72,20 @@ router.post('/edit/:id', async function(req, res, next) {
         workout.weight = req.body.weight;
 
         await workout.save();
+        res.redirect('/workouts');
+    }
+    catch (err) {
+        next(err);
+    }
+});
+router.post('/delete/:id', async function(req, res, next) {
+    try {
+        let result = await Workout.deleteOne({
+            _id: req.params.id
+        });
+        if (result.deletedCount === 0) {
+            return res.status(404).send('Workout not found');
+        }
         res.redirect('/workouts');
     }
     catch (err) {

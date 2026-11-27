@@ -1,0 +1,127 @@
+/* Custom Workout Tracker styling using the portfolio colour theme. */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #EBE6DC;
+    color: #2B3E54;
+}
+
+/* Shared navigation */
+.site-nav {
+    background: linear-gradient(135deg, #2B3E54, #4C6170, #65695B);
+    padding: 16px 0;
+}
+
+.site-nav .navbar-brand {
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.site-nav .nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Page headings */
+main h1 {
+    color: #2B3E54;
+    font-weight: bold;
+}
+
+main p {
+    color: #4C6170;
+}
+
+/* Home page introduction */
+.home-intro {
+    background-color: #FFFDF8;
+    border-left: 6px solid #65695B;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(31, 45, 61, 0.1);
+}
+
+/* Main action buttons */
+.btn.btn-primary {
+    background-color: #4C6170;
+    border-color: #4C6170;
+    color: white;
+}
+
+.btn.btn-primary:hover,
+.btn.btn-primary:focus,
+.btn.btn-primary:active {
+    background-color: #2B3E54;
+    border-color: #2B3E54;
+    color: white;
+}
+
+.btn.btn-primary:focus {
+    box-shadow: 0 0 0 3px rgba(76, 97, 112, 0.25);
+}
+
+/* Edit buttons */
+.btn.btn-warning {
+    background-color: #C0C4B7;
+    border-color: #C0C4B7;
+    color: #142030;
+}
+
+.btn.btn-warning:hover,
+.btn.btn-warning:focus,
+.btn.btn-warning:active {
+    background-color: #8A9EAB;
+    border-color: #8A9EAB;
+    color: #142030;
+}
+
+/* Workout table */
+.table-responsive {
+    background-color: #FFFDF8;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(31, 45, 61, 0.1);
+}
+
+.table {
+    margin-bottom: 0;
+    border-color: #C0C4B7;
+}
+
+.table thead th {
+    background-color: #4C6170;
+    color: white;
+    padding: 14px;
+}
+
+.table tbody td {
+    background-color: #FFFDF8;
+    color: #1F2D3D;
+    padding: 14px;
+    vertical-align: middle;
+}
+
+/* Add and Edit form fields */
+.form-label {
+    color: #2B3E54;
+    font-weight: bold;
+}
+
+.form-control {
+    background-color: #FFFDF8;
+    border-color: #C0C4B7;
+    border-radius: 8px;
+    color: #1F2D3D;
+    padding: 10px;
+}
+
+.form-control:focus {
+    background-color: #FFFDF8;
+    border-color: #8A9EAB;
+    color: #1F2D3D;
+    box-shadow: 0 0 0 3px rgba(76, 97, 112, 0.2);
+}
+
+/* Shared footer */
+.site-footer {
+    background: linear-gradient(135deg, #2B3E54, #4C6170, #65695B);
+    color: white;
+    border-top: 3px solid #C0C4B7;
+}
